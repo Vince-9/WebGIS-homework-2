@@ -76,11 +76,11 @@ function () {
       var JABP = Math.acos((Dab * Dab + Dbp * Dbp - Dap * Dap) / (2 * Dab * Dbp));
       var aAP = aAB - JBAP;
       var aBP = aAP + JABP;
-      var X = x1 + Dap * Math.cos(aAP);
-      var Y = y1 + Dap * Math.sin(aAP);
+      var x = x1 + Dap * Math.cos(aAP);
+      var y = y1 + Dap * Math.sin(aAP);
       return {
-        X: X,
-        Y: Y
+        x: x.toFixed(3),
+        y: y.toFixed(3)
       };
     }
     /**

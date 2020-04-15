@@ -41,10 +41,10 @@ export default class Calculate {
     let JABP = Math.acos((Dab * Dab + Dbp * Dbp - Dap * Dap) / (2 * Dab * Dbp));
     let aAP = aAB - JBAP;
     let aBP = aAP + JABP;
-    const X = x1 + Dap * Math.cos(aAP);
-    const Y = y1 + Dap * Math.sin(aAP);
+    const x = x1 + Dap * Math.cos(aAP);
+    const y = y1 + Dap * Math.sin(aAP);
 
-    return { X, Y };
+    return { x: x.toFixed(3), y: y.toFixed(3) };
   }
 
   /**
