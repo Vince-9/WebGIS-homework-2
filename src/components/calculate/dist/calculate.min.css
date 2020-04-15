@@ -1,1 +1,1 @@
-.cal-layout{width:100%;height:100%}.cal-layout .cal-header{color:#fff;font-size:24px;background:linear-gradient(20deg,#0081ff,#1cbbb4)}.cal-layout .mid-content{height:500px;overflow:scroll}.cal-layout .mid-content .left{background:#fff}
+.cal-layout{width:100%;height:100%;background:#fff}.cal-layout .cal-header{color:#fff;font-size:24px;background:linear-gradient(20deg,#0081ff,#1cbbb4)}.cal-layout .mid-content{height:500px;overflow:scroll}.cal-layout .mid-content .left{background:#fff}.cal-layout .mid-content .right{padding:10px}

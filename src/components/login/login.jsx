@@ -3,8 +3,8 @@
  */
 import React, { Component } from 'react'
 import './login.less'
-import {withRouter} from "react-router-dom"
-import {message} from 'antd'
+import { withRouter } from "react-router-dom"
+import { message } from 'antd'
 
 class Login extends Component {
   constructor(props) {
@@ -25,18 +25,18 @@ class Login extends Component {
     if (username === 'admin' && password === '123456') {
       localStorage.setItem('username', username);
       this.props.history.replace('/');
-      message.success('登录成功！',2);
+      message.success('登录成功！', 2);
     } else {
-      message.error('用户名或密码错误！',2);
+      message.error('用户名或密码错误！', 2);
     }
   }
 
   /**
    * 点击注册按钮
    */
-   handleSignup = () => {
-     message.info('功能开发中~', 2);
-   }
+  handleSignup = () => {
+    message.info('功能开发中~', 2);
+  }
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -60,6 +60,12 @@ class Login extends Component {
           e.parentElement.classList.remove('focus');
       });
     });
+    // 现代浏览器会进行密码自动填充，异步检测有无被填充
+    setTimeout(() => {
+      document.querySelectorAll('#login-container .input input').forEach(e => {
+        if (e.value !== '') e.parentElement.classList.add('focus');
+      });
+    }, 100);
   }
 
   render() {
