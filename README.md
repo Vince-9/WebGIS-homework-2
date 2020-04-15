@@ -23,7 +23,7 @@ npm install
 ```bash
 npm start
 ```
-如果你想学习这个项目，那么你必须先了解`React`以及其生态链如`creat-react-app``React-Router`等。
+如果你想学习这个项目，那么你必须先了解`React`以及其生态链如`creat-react-app` `React-Router`等。
 
 ## 功能
 

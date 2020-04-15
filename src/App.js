@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Calculate from './pages/calculate/calculate'
+import Calculate from './components/calculate/calculate'
 import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Login from './pages/login/login'
+import Login from './components/login/login'
 
 
 class App extends Component {
