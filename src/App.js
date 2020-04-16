@@ -6,6 +6,12 @@ import Login from './components/login/login'
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    const screenWidth = window.screen.availWidth;
+    if (screenWidth <= 500) alert('本页面暂未适配移动端，在手机上打开可能会导致页面错乱');
+  }
+
   render() {
     return (
       <div className="App">

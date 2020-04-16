@@ -69,6 +69,12 @@ function () {
       var y2 = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
       var Dap = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
       var Dbp = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+      x1 = parseFloat(x1);
+      y1 = parseFloat(y1);
+      x2 = parseFloat(x2);
+      y2 = parseFloat(y2);
+      Dap = parseFloat(Dap);
+      Dbp = parseFloat(Dbp);
       var Dab = Calculate.distance(x1, y1, x2, y2);
       var aAB = Calculate.cor2ang(x1, y1, x2, y2);
       aAB = aAB / 180 * Math.PI;
@@ -90,15 +96,19 @@ function () {
   }, {
     key: "distance",
     value: function distance(Xa, Ya, Xb, Yb) {
-      return Math.sqrt((Xa - Xb) * (Xa - Xb) + (Ya - Yb) * (Ya - Yb));
+      return Math.sqrt((Xa - Xb) * (Xa - Xb) + (Ya - Yb) * (Ya - Yb)).toFixed(3);
     }
     /**
-     * 坐标反算角度
+     * 坐标反算方位角
      */
 
   }, {
     key: "cor2ang",
     value: function cor2ang(x1, y1, x2, y2) {
+      x1 = parseFloat(x1);
+      y1 = parseFloat(y1);
+      x2 = parseFloat(x2);
+      y2 = parseFloat(y2);
       var dx = x2 - x1;
       var dy = y2 - y1;
       var a;
@@ -107,7 +117,7 @@ function () {
       if (dx === 0 && dy === 0) a = 0;else if (dx === 0) {
         if (dy > 0) a = 0;else a = 180;
       } else if (dx <= 0) a = f + 180;else if (dy <= 0) a = f + 360;else a = f;
-      return a;
+      return a.toFixed(6);
     }
   }]);
 

@@ -77,7 +77,7 @@ export default class ForwardInter extends Component {
               </div>
             </Col>
             <Col span={12}>
-              <img src={require('./img/forward.jpg')} height="220px" alt="" />
+              <img src="https://vincent-demo-1.oss-cn-chengdu.aliyuncs.com/vin_forum_img/forward.jpg" height="220px" alt="" />
             </Col>
           </Row>
           <Row >

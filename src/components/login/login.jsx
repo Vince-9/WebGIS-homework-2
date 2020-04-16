@@ -4,17 +4,18 @@
 import React, { Component } from 'react'
 import './login.less'
 import { withRouter } from "react-router-dom"
-import { message } from 'antd'
+import { message, Button } from 'antd'
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showLogin: true, // 右侧面板是登录还是注册，true则为登录
-      name: 'admin',
-      password: '123456',
+      name: '',
+      password: '',
       repeat: '', // 重复密码
-    }
+    };
+    message.info('测试账号：admin  密码：123456');
   }
 
   /**
@@ -28,6 +29,7 @@ class Login extends Component {
       message.success('登录成功！', 2);
     } else {
       message.error('用户名或密码错误！', 2);
+      message.info('测试账号：admin  密码：123456');
     }
   }
 
@@ -38,11 +40,25 @@ class Login extends Component {
     message.info('功能开发中~', 2);
   }
 
+  // 忘记密码
+  forgetPwd = () => {
+    message.info('测试账号：admin  密码：123456');
+  }
+
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+  }
+
+  /**
+   * 处理表单的回车事件
+   */
+  HandleonKeyDown = e => {
+    if (e.key.toLowerCase() === 'enter') {
+      this.handleLogin();
+    }
   }
 
   componentDidMount() {
@@ -74,7 +90,7 @@ class Login extends Component {
     return (
       <div id="login-container">
         <div className="container">
-          <img src={require('../../assets/img/login-bg.jpg')} alt="" />
+          <img src="https://vincent-demo-1.oss-cn-chengdu.aliyuncs.com/vin_forum_img/%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E8%83%8C%E6%99%AF%E5%9B%BE.jpg" alt="" />
           <div className="panel">
             <div className={`content ${showLogin ? "login" : 'active'}`}>
               <div className="switch">
@@ -94,7 +110,7 @@ class Login extends Component {
                   Sign Up
                 </span>
               </div>
-              <form>
+              <form onKeyDown={this.HandleonKeyDown}>
                 <div id='email' className="input" placeholder='Email'>
                   <input type="text" name='email' onChange={this.handleInputChange} />
                 </div>
@@ -107,7 +123,8 @@ class Login extends Component {
                 <div id='repeat' className="input" placeholder='Repeat'>
                   <input type="text" name='repeat' onChange={this.handleInputChange} />
                 </div>
-                <span>Forget?</span>
+                {/* <span className='forget-link'>Forget?</span> */}
+                <Button type="link" className='forget-link' onClick={this.forgetPwd} ghost>Forget?</Button>
                 {
                   showLogin ? <div id="login-btn" onClick={this.handleLogin}>LOG IN</div> :
                     <div id="login-btn" onClick={this.handleSignup}>SIGN UP</div>

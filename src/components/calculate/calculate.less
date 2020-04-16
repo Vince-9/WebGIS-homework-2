@@ -1,28 +1,43 @@
 .cal-layout {
-  width : 100%;
-  height: 100%;
+  width     : 100%;
+  height    : 100%;
   background: white;
 
   .cal-header {
+    position: relative;
     color     : white;
     font-size : 24px;
-    background: linear-gradient(20deg, #0081ff, #1cbbb4)
+    background: linear-gradient(20deg, #0081ff, #1cbbb4);
+
     // background: linear-gradient(20deg, #9000ff, #5e00ff)
+    .welcome-box {
+      position: absolute;
+      margin: 0;
+      right: 10px;
+      top: 0;
+      .welcome{
+        font-size: 14px;
+      }
+    }
   }
 
   .mid-content {
-    height  : 500px;
     overflow: scroll;
-    
     .left {
       background: white;
     }
     
     .right {
-      padding: 10px;
-      // margin: 5px 5px 0 5px;
-      // background: white;
-      // background: hotpink;
+      // padding      : 10px;
+      overflow: scroll;
+      .container{
+        height: 100%;
+        max-width: 1000px;
+        min-width: 500px;
+        margin: 0 auto;
+        overflow: scroll;
+        padding: 10px;
+      }
     }
   }
 

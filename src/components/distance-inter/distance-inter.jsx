@@ -77,7 +77,7 @@ export default class DistanceInter extends Component {
               </div>
             </Col>
             <Col span={12}>
-              <img src={require('./img/distance.jpg')} height="220px" alt="" />
+              <img src="https://vincent-demo-1.oss-cn-chengdu.aliyuncs.com/vin_forum_img/distance.jpg" height="220px" alt="" />
             </Col>
           </Row>
           <Row >

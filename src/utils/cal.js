@@ -34,6 +34,12 @@ export default class Calculate {
    * @param {number} Dbp 
    */
   static distanceInter(x1 = 0, y1 = 0, x2 = 0, y2 = 0, Dap = 0, Dbp = 0) {
+    x1 = parseFloat(x1);
+    y1 = parseFloat(y1);
+    x2 = parseFloat(x2);
+    y2 = parseFloat(y2);
+    Dap = parseFloat(Dap);
+    Dbp = parseFloat(Dbp);
     let Dab = Calculate.distance(x1, y1, x2, y2);
     let aAB = Calculate.cor2ang(x1, y1, x2, y2);
     aAB = aAB / 180 * Math.PI;
@@ -51,13 +57,17 @@ export default class Calculate {
    * 求两点距离
    */
   static distance(Xa, Ya, Xb, Yb) {
-    return Math.sqrt((Xa - Xb) * (Xa - Xb) + (Ya - Yb) * (Ya - Yb));
+    return Math.sqrt((Xa - Xb) * (Xa - Xb) + (Ya - Yb) * (Ya - Yb)).toFixed(3);
   }
 
   /**
-   * 坐标反算角度
+   * 坐标反算方位角
    */
   static cor2ang(x1, y1, x2, y2) {
+    x1 = parseFloat(x1);
+    y1 = parseFloat(y1);
+    x2 = parseFloat(x2);
+    y2 = parseFloat(y2);
     const dx = x2 - x1;
     const dy = y2 - y1;
     let a;
@@ -73,7 +83,7 @@ export default class Calculate {
     else if (dy <= 0)
       a = f + 360;
     else a = f;
-    return a;
+    return a.toFixed(6);
   }
 }
 
